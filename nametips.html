@@ -52,16 +52,15 @@ document.getElementById("tipResults").innerHTML = "Tips are: " + toShow;
 
 }
 
-// Function to handle radio button selection
+
 function chooseOp() {
-            // Get base amount and tip percent from input elements
+           
             var baseAmount = parseFloat(document.getElementById("baseAmount").value);
             var tipPercent = parseFloat(document.getElementById("tipPercent").value);
 
-            // Get the selected operation from radio buttons
             var operation = document.querySelector('input[name="operation"]:checked').value;
 
-            // Calculate based on the selected operation
+            
             var result;
             if (operation === "sum") {
                 result = baseAmount + tipPercent;
@@ -71,10 +70,11 @@ function chooseOp() {
                 result = baseAmount * tipPercent;
             }
 
-            // Display the results in the tipResults div
+            
             document.getElementById("output").innerHTML = operation.charAt(0).toUpperCase() +
                 operation.slice(1) + " of " + baseAmount + " and " + tipPercent + " is " + result;
         }
+        
 </script>
 
 </body>

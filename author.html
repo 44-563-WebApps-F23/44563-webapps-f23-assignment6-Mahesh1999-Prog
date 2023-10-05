@@ -48,30 +48,24 @@
                 out.innerHTML = ('wrong:' + oops);
             }
             function selectImage() {
-            // Code to handle image click...
+            
         }
 
-        // Get the image element
+        
         var image = document.querySelector('img');
 
-// Switch on the useImage variable
+
 switch (useImage) {
     case 1:
-        // Set image source for case 1
         image.src = "Mumbai1.webp";
-        // Update useImage to the next value
         useImage = 2;
         break;
     case 2:
-        // Set image source for case 2
         image.src = "Istanbul.jpg";
-        // Update useImage to the next value
         useImage = 3;
         break;
     case 3:
-        // Set image source for case 3
         image.src = "Tokyo-skyline.jpg";
-        // Update useImage back to the first value
         useImage = 1;
         break;
    
