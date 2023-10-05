@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Mahesh cruise</title>
-</head>
-
-<form>
-    
+        <title>Goes cruise</title>
+    </head> 
+<form> 
     <div class="form-group">
         <label for="sharesCabin">Shares Cabin</label>
         <input type="checkbox" id="sharesCabin" value="True">
-
         <label for="breakfast">Breakfast</label>
         <input type="checkbox" id="breakfast" value="True">
-
         <label for="poolPass">Pool Pass</label>
         <input type="checkbox" id="poolPass" value="False"><br><br>
     </div>
-
     <input type="button" value="Select a cruise" onclick="selectCruise()"><br><br>
-
     <p id="cruiseDetails"></p>
 </form>
-
+<form>
+    <label for="days">Enter the number of days</label>
+    <input type="text" id="days" name="days" value="days"><br><br>
+    <label for="price">Enter price</label>
+    <input type="text" id="price" name="price" value="price"><br><br>
+    <input type="button" onclick="updateCruise()" value="Update the Cruise">
+    <p id="cruise_update"></p>
+</form>
 <body>
-<h2>Mahesh goes on a cruise</h2>
-
+    <h2>Mahesh goes on a cruise </h2>
 <script> 
-
-var my_cruise = {};
-
-
-// Function to handle cruise selection
-function selectCruise() {
-            // Reset cruise details
-            my_cruise = {};
-
-            // Get checkbox values
-            my_cruise.shared = document.getElementById("sharesCabin").checked;
-            my_cruise.breakfast = document.getElementById("breakfast").checked;
-            my_cruise.pool = document.getElementById("poolPass").checked;
-
-            // Display selected cruise details
-            document.getElementById("cruiseDetails").innerHTML = "<pre>" + JSON.stringify(my_cruise, null, 2) + "</pre>";
-        }
-
-</script>
-
+    var my_cruise = {};
+    function selectCruise() {      
+     my_cruise = {};
+    my_cruise.shared = document.getElementById("sharesCabin").checked;
+    my_cruise.breakfast = document.getElementById("breakfast").checked;
+    my_cruise.pool = document.getElementById("poolPass").checked;
+    document.getElementById("cruiseDetails").innerHTML = "<pre>" + JSON.stringify(my_cruise, null, 2) + "</pre>";
+    }
+    function updateCruise(){
+        const days=document.getElementById('days').value;
+        const price=document.getElementById('price').value;
+        my_cruise["days"]=days;
+        my_cruise["price"]=price;
+        document.getElementById('cruise_update').textContent=`my_cruise[....]=${JSON.stringify(my_cruise)}`;
+    }
+    </script> 
 </body>
-</html> 
+</html>
